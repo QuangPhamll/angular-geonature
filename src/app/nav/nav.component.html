@@ -1,42 +1,6 @@
 <md-nav-list>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>home</md-icon>
-    <h3 md-line> Accueil </h3>
-  </a>
-  <a md-list-item href="#"> 
-    <md-icon md-list-icon>assessment</md-icon>
-    <h3 md-line> Synthèse </h3>
-  </a>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>pets</md-icon>
-    <h3 md-line> Contact Faune </h3>
-  </a>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>filter_vintage</md-icon>
-    <h3 md-line> Contact Flore </h3>
-  </a>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>local_florist</md-icon>
-    <h3 md-line> Flore Station </h3>
-  </a>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>visibility</md-icon>
-    <h3 md-line> Suivi Flore </h3>
-  </a>
-  <a md-list-item href="#"> 
-    <md-icon md-list-icon>settings</md-icon>
-    <h3 md-line> Paramètres </h3>
-  </a>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>youtube_searched_for</md-icon>
-    <h3 md-line> Suivi Chiro </h3>
-  </a>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>cloud download</md-icon>
-    <h3 md-line> Exports </h3>
-  </a>
-  <a md-list-item href="#">
-    <md-icon md-list-icon>feedback</md-icon>
-    <h3 md-line> Prospections </h3>
-  </a>
+  <md-list-item *ngFor="let app of nav" routerLink={{app.route}} routerLinkActive="active">
+    <md-icon md-list-icon>{{app.icon}}</md-icon>
+    <h3 md-line> {{app.appName}} </h3>
+  </md-list-item>
 </md-nav-list>

@@ -12,11 +12,11 @@ html, body{
    min-width: 100%;
 }
 
-.app-content{  
+/*.app-content{  
     display: flex;
     height: 100%;
     justify-content: center;
-}
+}*/
 
 .sidenav {
     width: 15%;
