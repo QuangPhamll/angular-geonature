@@ -65,12 +65,16 @@ export default class MapService {
               console.log(this.editing);
               if (this.editing) {
                 console.log('maker');
-                  L.Icon.Default.imagePath = '/';
-                  L.Icon.Default.mergeOptions({
-                    iconUrl: require('../../../node_modules/leaflet/dist/images/marker-icon.png'),
-                    shadowUrl: require('../../../node_modules/leaflet/dist/images/marker-shadow.png'),
-                });
+                //   //L.Icon.Default.imagePath = '/';
+                //   L.Icon.Default.mergeOptions({
+                //     iconUrl: require('./marker-icon.png'),
+                //     shadowUrl: require('./marker-shadow.png'),
+                // });
                   const marker = L.marker(e.latlng, {
+                    icon: L.icon({
+                        iconUrl: require('./marker-icon.png') as string,
+                        shadowUrl: require('./marker-shadow.png') as string,
+                    }),
                     draggable: true,
                   })
                   .bindPopup('Marker #', {

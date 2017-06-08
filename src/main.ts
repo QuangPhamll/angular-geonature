@@ -1,3 +1,9 @@
+import 'leaflet';
+import 'zone.js/dist/zone';
+import 'zone.js/dist/long-stack-trace-zone';
+import 'reflect-metadata';
+import 'leaflet/dist/leaflet.css';
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
