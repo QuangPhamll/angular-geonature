@@ -1,9 +1,28 @@
-<md-grid-list cols="5">
-  <md-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-    {{tile.text}}
+<!--<md-grid-list cols="1">
+  <md-grid-tile cols="1">
+    <div class="flex-item" fxFlex>
+      <div id="map"></div>
+    </div>
   </md-grid-tile>
-</md-grid-list>
+</md-grid-list>-->
+<!--<div id="map">
+    <app-tool-bar></app-tool-bar>
+</div>-->
+
+<div class="flex-container content" fxLayout="row">
+  <div class="flex-item" fxFlex>
+    <div id="map">
+        <div>
+    <button id="add-marker" class="btn btn-default on-map" [class.btn-primary]="mapService.editing"
+        title="Add markers by clicking on the map" (click)="mapService.toggleEditing()" btnCheckbox>
+    <i class="fa fa-map-marker"></i>
+</button>
+
+<button id="remove-marker" class="btn btn-default on-map" [class.btn-primary]="mapService.removing"
+        title="Remove markers by clicking on them" (click)="mapService.toggleRemoving()" btnCheckbox>
+    <i class="fa fa-trash"></i>
+</button>
+  </div>
+    </div>
+  </div>
+</div>
