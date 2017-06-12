@@ -1,25 +1,6 @@
 <md-grid-list cols="4" rowHeight="1:2.6">
   <md-grid-tile colspan="3"  >
-      <div id="map">
-        <div>
-          <input id="place-input" class="on-map" type="text" placeholder="Enter a place to go..."
-          [(ngModel)]="address" (keyup.enter)="goto()">
-
-          <button id="goto" class="btn btn-default on-map" href="#" title="Goto Place" (click)="goto()">
-              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-          </button>
-
-          <button id="add-marker" class="btn btn-default on-map" [class.btn-primary]="mapService.editing"
-                  title="Add markers by clicking on the map" (click)="mapService.toggleEditing()" btnCheckbox>
-                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-          </button>
-
-          <button id="remove-marker" class="btn btn-default on-map" [class.btn-primary]="mapService.removing"
-                  title="Remove markers by clicking on them" (click)="mapService.toggleRemoving()" btnCheckbox>
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
+    <app-carte></app-carte>
   </md-grid-tile>
   <md-grid-tile colspan="1" >
   </md-grid-tile>

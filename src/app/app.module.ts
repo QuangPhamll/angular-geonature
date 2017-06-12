@@ -22,6 +22,7 @@ import { NavComponent } from './nav/nav.component';
 import { ContactFauneComponent } from './contact-faune/contact-faune.component';
 import { ContactFloreComponent } from './contact-flore/contact-flore.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { CarteComponent } from './carte/carte.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     ContactFauneComponent,
     ContactFloreComponent,
     AccueilComponent,
+    CarteComponent,
   ],
   imports: [
     HttpModule,
