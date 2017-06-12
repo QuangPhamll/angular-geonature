@@ -9,12 +9,6 @@ export default class MapService {
   private currentLayer: GeoJSON;
   public editing: boolean;
   public removing: boolean;
-  // a =   require('leaflet/dist/images/marker-icon.png');
-  // b =   require('leaflet/dist/images/marker-shadow.png');
-  // customDefault = L.icon({
-  //   iconUrl: this.a,
-  //   shadowUrl: this.b
-  // });
 
   constructor(private http: Http, private geocoder: GeocodingService) {
         this.baseMaps = {
@@ -56,28 +50,18 @@ export default class MapService {
                 location => map.panTo([location.latitude, location.longitude]),
                 err => console.error(err)
             );
-        // this.map.on('click', this.onMapClick);
   }
   onMapClick() {
     this.map.on('click', (e: any) => {
-              console.log('map click');
-              console.log(e.latlng);
-              console.log(this.editing);
               if (this.editing) {
-                console.log('maker');
-                //   //L.Icon.Default.imagePath = '/';
-                //   L.Icon.Default.mergeOptions({
-                //     iconUrl: require('./marker-icon.png'),
-                //     shadowUrl: require('./marker-shadow.png'),
-                // });
                   const marker = L.marker(e.latlng, {
                     icon: L.icon({
-                        iconUrl: require('./marker-icon.png') as string,
-                        shadowUrl: require('./marker-shadow.png') as string,
+                        iconUrl: require('../../images/marker-icon.png') as string,
+                        shadowUrl: require('../../images/marker-shadow.png') as string,
                     }),
                     draggable: true,
                   })
-                  .bindPopup('Marker #', {
+                  .bindPopup('Marker at ' + e.latlng, {
                       offset: L.point(12, 6)
                   })
                   .addTo(this.map)
