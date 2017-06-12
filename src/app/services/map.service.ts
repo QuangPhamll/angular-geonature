@@ -98,6 +98,38 @@ export default class MapService {
         }
     }
 
+    showBoundary(geometry) {
+      this.clear();
+      const featureCollection: GeoJSON.FeatureCollection<any> = {
+        type: 'FeatureCollection',
+        features: [
+          {
+            type: 'Feature',
+            geometry: geometry,
+            properties: {}
+          }
+        ]
+      };
+
+      this.currentLayer = L.geoJSON(featureCollection, {
+        style: () => {
+          return {
+            color: '#3F51B5',
+            fillColor: '#3F51B5'
+          };
+        }
+      }).addTo(this.map);
+
+      this.map.fitBounds(this.currentLayer.getBounds());
+  }
+
+  clear() {
+    if (this.currentLayer) {
+      this.map.removeLayer(this.currentLayer);
+      this.currentLayer = undefined;
+    }
+  }
+
   disableMouseEvent(elementId: string) {
         const element = <HTMLElement>document.getElementById(elementId);
         // stops the bubbling of an event to parent elements,

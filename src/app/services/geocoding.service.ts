@@ -34,6 +34,7 @@ export class GeocodingService {
                     lat: viewPort.northeast.lat,
                     lng: viewPort.northeast.lng
                   });
+                console.log(location);
                 return location;
             });
     }
