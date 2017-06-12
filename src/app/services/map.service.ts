@@ -74,6 +74,12 @@ export default class MapService {
                           this.map.removeLayer(this.marker);
                       }
                   });
+
+                  this.marker.on('move', (event: MouseEvent) => {
+                    this.marker.bindPopup('Marker at ' + this.marker.getLatLng(), {
+                      offset: L.point(12, 6)
+                    });
+                  });
               }
       });
   }
