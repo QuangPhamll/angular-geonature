@@ -1,4 +1,3 @@
-/// <reference path="./typings/require.d.ts"/>
 import 'leaflet';
 import 'leaflet.vectorgrid';
 import 'zone.js/dist/zone';

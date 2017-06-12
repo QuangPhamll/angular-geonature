@@ -5,6 +5,8 @@ import {GeocodingService} from '../services/geocoding.service';
 
 
 import {Location} from '../core/location.class';
+import {Map} from 'leaflet';
+
 
 @Component({
   selector: 'app-contact-faune',
@@ -14,14 +16,10 @@ import {Location} from '../core/location.class';
 
 })
 export class ContactFauneComponent implements OnInit {
-tiles = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
-
-  constructor(private mapService: MapService) {
+    address: string;
+    private map: Map;
+  constructor(private geocoder: GeocodingService, private mapService: MapService) {
+        this.address = '';
         this.mapService.editing = false;
         this.mapService.removing = false;
   }
@@ -31,5 +29,17 @@ tiles = [
     this.mapService.disableMouseEvent('remove-marker');
     this.mapService.initialize();
     this.mapService.onMapClick();
+    this.map = this.mapService.map;
+
   }
+
+  goto() {
+        if (!this.address) { return; }
+
+        this.geocoder.geocode(this.address)
+        .subscribe(location => {
+            this.map.fitBounds(location.viewBounds, {});
+            this.address = location.address;
+        }, error => console.error(error));
+    }
 }

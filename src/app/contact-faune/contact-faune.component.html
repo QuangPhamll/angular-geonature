@@ -1,45 +1,14 @@
-<!--<md-grid-list cols="1">
-  <md-grid-tile cols="1">
-    <div class="flex-item" fxFlex>
-      <div id="map"></div>
-    </div>
-  </md-grid-tile>
-</md-grid-list>-->
-<!--<div id="map">
-    <app-tool-bar></app-tool-bar>
-</div>-->
-  <!--<div class="flex-container content" fxLayout="row">
-    <div class="flex-item" fxFlex="70%">
-      <div id="map">
-        <div>
-          <button id="add-marker" class="btn btn-default on-map" [class.btn-primary]="mapService.editing"
-                  title="Add markers by clicking on the map" (click)="mapService.toggleEditing()" btnCheckbox>
-                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-          </button>
-
-          <button id="remove-marker" class="btn btn-default on-map" [class.btn-primary]="mapService.removing"
-                  title="Remove markers by clicking on them" (click)="mapService.toggleRemoving()" btnCheckbox>
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="flex-item" fxFlex="30%">
-    </div>
-  </div>-->
-
-<!--<md-grid-list cols="3" rowHeight="2:1">
-  <md-grid-tile cols="2">
-    one
-  </md-grid-tile>
-  <md-grid-tile cols="1">
-    true
-  </md-grid-tile>
-</md-grid-list>-->
 <md-grid-list cols="4" rowHeight="1:2.6">
   <md-grid-tile colspan="3"  >
       <div id="map">
         <div>
+          <input id="place-input" class="on-map" type="text" placeholder="Enter a place to go..."
+          [(ngModel)]="address" (keyup.enter)="goto()">
+
+          <button id="goto" class="btn btn-default on-map" href="#" title="Goto Place" (click)="goto()">
+              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+          </button>
+
           <button id="add-marker" class="btn btn-default on-map" [class.btn-primary]="mapService.editing"
                   title="Add markers by clicking on the map" (click)="mapService.toggleEditing()" btnCheckbox>
                 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
@@ -53,41 +22,5 @@
       </div>
   </md-grid-tile>
   <md-grid-tile colspan="1" >
-                <form class="example-form">
-                  <md-input-container class="example-full-width">
-                    <input mdInput placeholder="Company (disabled)" disabled value="Google">
-                  </md-input-container>
-
-                  <table class="example-full-width" cellspacing="0"><tr>
-                    <td><md-input-container class="example-full-width">
-                      <input mdInput placeholder="First name">
-                    </md-input-container></td>
-                    <td><md-input-container class="example-full-width">
-                      <input mdInput placeholder="Long Last Name That Will Be Truncated">
-                    </md-input-container></td>
-                  </tr></table>
-
-                  <p>
-                    <md-input-container class="example-full-width">
-                      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-                    </md-input-container>
-                    <md-input-container class="example-full-width">
-                      <textarea mdInput placeholder="Address 2"></textarea>
-                    </md-input-container>
-                  </p>
-
-                  <table class="example-full-width" cellspacing="0"><tr>
-                    <td><md-input-container class="example-full-width">
-                      <input mdInput placeholder="City">
-                    </md-input-container></td>
-                    <td><md-input-container class="example-full-width">
-                      <input mdInput placeholder="State">
-                    </md-input-container></td>
-                    <td><md-input-container class="example-full-width">
-                      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-                      <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-                    </md-input-container></td>
-                  </tr></table>
-                </form>
   </md-grid-tile>
 </md-grid-list>

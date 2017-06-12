@@ -5,11 +5,11 @@
     width:100%;
   }
 #add-marker {
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 310px;
 }
 
 #remove-marker {
-    margin: 10px 0 0 55px;
+    margin: 10px 0 0 355px;
 }
 
 .on-map {
@@ -23,4 +23,17 @@
 
 .example-full-width {
   width: 100%;
+}
+
+input {
+    margin: 10px 0 0 10px;
+    width: 250px;
+    height: 35px;
+    border: 2px solid rgba(77, 156, 237, 0.7);
+    font-size: 16px;
+    font: rgb(142, 142, 142);
+}
+
+#goto {
+    margin: 10px 0 0 265px;
 }

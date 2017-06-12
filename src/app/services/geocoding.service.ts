@@ -25,7 +25,7 @@ export class GeocodingService {
                 location.latitude = result.results[0].geometry.location.lat;
                 location.longitude = result.results[0].geometry.location.lng;
 
-                const viewPort = result.results[0].geometry.viewport;
+                let viewPort = result.results[0].geometry.viewport;
                 location.viewBounds = L.latLngBounds(
                   {
                     lat: viewPort.southwest.lat,
@@ -34,7 +34,6 @@ export class GeocodingService {
                     lat: viewPort.northeast.lat,
                     lng: viewPort.northeast.lng
                   });
-
                 return location;
             });
     }
