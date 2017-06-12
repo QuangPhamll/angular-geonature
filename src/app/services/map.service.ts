@@ -9,6 +9,7 @@ export default class MapService {
   private currentLayer: GeoJSON;
   public editing: boolean;
   public removing: boolean;
+  public marker: any;
 
   constructor(private http: Http, private geocoder: GeocodingService) {
         this.baseMaps = {
@@ -54,7 +55,8 @@ export default class MapService {
   onMapClick() {
     this.map.on('click', (e: any) => {
               if (this.editing) {
-                  const marker = L.marker(e.latlng, {
+                  if ( this.marker != null ) { this.marker.remove()};
+                  this.marker = L.marker(e.latlng, {
                     icon: L.icon({
                         iconUrl: require('../../images/marker-icon.png') as string,
                         shadowUrl: require('../../images/marker-shadow.png') as string,
@@ -67,9 +69,9 @@ export default class MapService {
                   .addTo(this.map)
                   .openPopup();
 
-                  marker.on('click', (event: MouseEvent) => {
+                  this.marker.on('click', (event: MouseEvent) => {
                       if (this.removing) {
-                          this.map.removeLayer(marker);
+                          this.map.removeLayer(this.marker);
                       }
                   });
               }
@@ -92,7 +94,8 @@ export default class MapService {
 
   disableMouseEvent(elementId: string) {
         const element = <HTMLElement>document.getElementById(elementId);
-        // stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed.
+        // stops the bubbling of an event to parent elements,
+        // preventing any parent event handlers from being executed.
         L.DomEvent.disableClickPropagation(element);
         L.DomEvent.disableScrollPropagation(element);
     }
