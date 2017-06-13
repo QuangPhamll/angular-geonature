@@ -1,9 +1,3 @@
-#map {
-    position:absolute;
-    top:0;
-    bottom:0;
-    width:100%;
-  }
 #add-marker {
     margin: 10px 0 0 310px;
 }
@@ -17,13 +11,6 @@
     z-index: 1000;
 }
 
-.example-form {
-  width: 500px;
-}
-
-.example-full-width {
-  width: 100%;
-}
 
 input {
     margin: 10px 0 0 10px;

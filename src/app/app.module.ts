@@ -1,10 +1,3 @@
-import 'leaflet';
-import 'leaflet.vectorgrid';
-import 'zone.js/dist/zone';
-import 'zone.js/dist/long-stack-trace-zone';
-import 'reflect-metadata';
-import 'leaflet/dist/leaflet.css';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +7,6 @@ import {FormsModule} from '@angular/forms';
 import 'hammerjs';
 import { MaterialModule, MdIconModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import { AppComponent } from './app.component';
@@ -41,8 +33,7 @@ import { CarteComponent } from './carte/carte.component';
     MaterialModule,
     MdIconModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    FlexLayoutModule
+    AppRoutingModule
   ],
   providers: [  ],
   bootstrap: [AppComponent]
