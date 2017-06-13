@@ -33,11 +33,13 @@ export class CarteComponent implements OnInit {
   goto() {
         if (!this.address) { return; }
 
-        this.geocoder.geocode(this.address)
-        .subscribe(location => {
-            this.map.fitBounds(location.viewBounds, {});
-            this.address = location.address;
-        }, error => console.error(error));
+        this.mapService.search(this.address);
+
+        // this.geocoder.geocode(this.address)
+        // .subscribe(location => {
+        //     this.map.fitBounds(location.viewBounds, {});
+        //     this.address = location.address;
+        // }, error => console.error(error));
     }
 
 }

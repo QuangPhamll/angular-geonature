@@ -98,30 +98,6 @@ export default class MapService {
         }
     }
 
-    showBoundary(geometry) {
-      this.clear();
-      const featureCollection: GeoJSON.FeatureCollection<any> = {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            geometry: geometry,
-            properties: {}
-          }
-        ]
-      };
-
-      this.currentLayer = L.geoJSON(featureCollection, {
-        style: () => {
-          return {
-            color: '#3F51B5',
-            fillColor: '#3F51B5'
-          };
-        }
-      }).addTo(this.map);
-
-      this.map.fitBounds(this.currentLayer.getBounds());
-  }
 
   clear() {
     if (this.currentLayer) {
@@ -137,5 +113,42 @@ export default class MapService {
         L.DomEvent.disableClickPropagation(element);
         L.DomEvent.disableScrollPropagation(element);
     }
+
+    search(address: string) {
+    let results = [];
+    this.http
+        .get(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json&limit=1&polygon_geojson=1`)
+        .map(res => res.json())
+        .subscribe(r => {
+          results = r.filter(result => {
+            this.showBoundary(result.geojson);
+          });
+    });
+  }
+    showBoundary(geometry) {
+    this.clear();
+
+    const featureCollection: GeoJSON.FeatureCollection<any> = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: geometry,
+          properties: {}
+        }
+      ]
+    };
+
+    this.currentLayer = L.geoJSON(featureCollection, {
+      style: () => {
+        return {
+          color: '#eb3810',
+          fillColor: '#3F51B5'
+        };
+      }
+    }).addTo(this.map);
+
+    this.map.fitBounds(this.currentLayer.getBounds());
+  }
 
 }
