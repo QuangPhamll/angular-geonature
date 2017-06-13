@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 
+
 import 'hammerjs';
 import { MaterialModule, MdIconModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
