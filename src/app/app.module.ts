@@ -6,8 +6,9 @@ import {FormsModule} from '@angular/forms';
 
 
 import 'hammerjs';
-import { MaterialModule, MdIconModule } from '@angular/material';
+import { MaterialModule, MdIconModule, MdNativeDateModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import { AppComponent } from './app.component';
@@ -34,6 +35,8 @@ import { ContactFauneFormulaireComponent } from './contact-faune/contact-faune-f
     FormsModule,
     BrowserModule,
     MaterialModule,
+    FlexLayoutModule,
+    MdNativeDateModule,
     MdIconModule,
     BrowserAnimationsModule,
     AppRoutingModule

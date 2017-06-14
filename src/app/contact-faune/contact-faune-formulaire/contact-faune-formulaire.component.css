@@ -1,9 +1,24 @@
 .form-card {
     width: 100%;
     padding: 5px 5px 5px 5px;
-    background-color: #1d0f1d;  
+    background-color: #1d0f1d;
+    align-items: initial;
+    justify-content: initial;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    margin: 5px 5px 5px 5px;
 }
 
 .card-header {
     background-color: #5c1351;
 }
+
+.card-content {
+    padding-left: 15px;
+    margin-top: 10px;
+}
+
