@@ -13,9 +13,89 @@
       <button mdSuffix [mdDatepickerToggle]="picker"></button>
     </md-input-container>
     <md-datepicker #picker></md-datepicker>
-    <br>
+
     <md-input-container>
       <input mdInput type="text" placeholder="Commune:" >
     </md-input-container>
   </md-card-content>  
+</md-card>
+
+<md-card class="form-card">
+  <md-card-header class="card-header">
+    <h5><u>Listes des taxons observés:</u></h5>
+  </md-card-header>
+
+  <md-card-content class="card-content">
+<br>
+      <md-select placeholder="Langue:" [(ngModel)]="selectedValue" name="lange">
+        <md-option *ngFor="let langue of langues" [value]="langue.value">
+          {{langue.viewValue}}
+        </md-option>
+      </md-select>
+
+      <md-select placeholder="Groupe taxonomique:" [(ngModel)]="selectedTaxonomique" name="taxon">
+        <md-option *ngFor="let taxonomique of taxonomiques" [value]="taxonomique.value">
+          {{taxonomique.viewValue}}
+        </md-option>
+      </md-select>
+<br>
+    <md-checkbox>Patrimoniaux</md-checkbox>
+    <md-checkbox>Priorrité</md-checkbox>
+    <md-checkbox>Nouveau</md-checkbox>
+    <md-checkbox>Facultatif</md-checkbox>
+<br>
+<br>
+    <md-select placeholder="Taxon:" [(ngModel)]="selectedTaxon" name="tax">
+      <md-option *ngFor="let taxon of taxons" [value]="taxon.value">
+        {{taxon.viewValue}}
+      </md-option>
+    </md-select>
+<br>
+    <md-input-container>
+      <input mdInput type="text" placeholder="Critière d'observation:" >
+    </md-input-container>
+<br>
+    <md-input-container>
+      <input mdInput type="number" placeholder="Ad mâle:" >
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput type="number" placeholder="Ad femelle:" >
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput type="number" placeholder="Ad indéterminé:" >
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput type="number" placeholder="Non adulte:" >
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput type="number" placeholder="Sexe, âge indéterminé:" >
+    </md-input-container>
+<br>
+    <md-input-container>
+      <input mdInput type="text" placeholder="Commentaire:" >
+    </md-input-container>
+    <md-input-container>
+      <input mdInput type="text" placeholder="Déterminateur:" >
+    </md-input-container>
+
+  <md-card-actions align="center">
+    <button md-raised-button>Annuler</button>
+    <button md-raised-button>Ajouter</button>
+  </md-card-actions>
+  </md-card-content>
+
+</md-card>
+
+<md-card class="form-card">
+    <md-card-header class="card-header">
+    <h5><u>Test View:</u></h5>
+  </md-card-header>
+  <md-card-content class="card-content">
+    <p>Result:</p>
+  </md-card-content>
+
 </md-card>
