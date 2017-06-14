@@ -16,6 +16,7 @@ import { ContactFauneComponent } from './contact-faune/contact-faune.component';
 import { ContactFloreComponent } from './contact-flore/contact-flore.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CarteComponent } from './carte/carte.component';
+import { ContactFauneFormulaireComponent } from './contact-faune/contact-faune-formulaire/contact-faune-formulaire.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { CarteComponent } from './carte/carte.component';
     ContactFloreComponent,
     AccueilComponent,
     CarteComponent,
+    ContactFauneFormulaireComponent,
   ],
   imports: [
     HttpModule,
