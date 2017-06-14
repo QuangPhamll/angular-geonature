@@ -1,15 +1,13 @@
-<md-toolbar color="accent">
+<md-sidenav-container class="side-container">
+  <md-toolbar class="toolbar">
   <button md-mini-fab (click)="sidenav.toggle()">
-    <md-icon>apps</md-icon>
+    <md-icon class="icon-toolbar">apps</md-icon>
   </button>
 </md-toolbar>
-
-
-<md-sidenav-container class="side-container">
   <md-sidenav #sidenav mode="side" opened="true" class="sidenav">
     <app-nav></app-nav>
-  </md-sidenav>
-  <div>
-    <router-outlet></router-outlet>
-  </div>
+  </md-sidenav>   
+    <div>
+      <router-outlet></router-outlet>
+    </div>
 </md-sidenav-container>

@@ -13,5 +13,16 @@ html, body{
 }
 
 .sidenav {
-    width: 220px;
+    width: 11%;
+    background-color: #1d0f1d;
+}
+.toolbar {
+  background-color: #1d0f1d;
+  margin: 0px 5px 0px 3px;
+}
+
+.mat-mini-fab {
+  /*background-color: rgba(0,0,0,.87);*/
+  background-color: #1d0f1d;
+  color: #5c1351;
 }
