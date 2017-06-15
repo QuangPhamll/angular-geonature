@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  public geonature_image;
   const
   nav = [{}];
   constructor() {
@@ -24,5 +25,6 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.geonature_image = require ('./../../images/geonature_image2.png') as string;
   }
 }

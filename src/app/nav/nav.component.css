@@ -1,3 +1,7 @@
 .appnav {
-  margin-top: 65px;
+  margin-top: 10px;
+}
+
+.img-responsive {
+    padding: 10px 10px 10px 10px;
 }

@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "logo.ico"
+        "logo_geonature.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
