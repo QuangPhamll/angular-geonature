@@ -98,6 +98,14 @@
     <p>Result:</p>
     <p>type: {{result.type}}</p>
     <p>coordinates: {{result.coordinates}}</p>
+    <div *ngIf="httpDone">
+      <p>{{gpsData.place_id}}</p>
+      <p>{{gpsData.display_name}}</p>
+      <p>{{gpsData.address.state}}</p>
+      <p>{{gpsData.address.city_district}}</p>
+      <p>{{gpsData.address.country}}</p>
+      <p>{{gpsData.address.postcode}}</p>
+    </div>
   </md-card-content>
 
 </md-card>
