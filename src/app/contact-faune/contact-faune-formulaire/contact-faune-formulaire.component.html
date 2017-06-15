@@ -84,7 +84,7 @@
 
   <md-card-actions align="center">
     <button md-raised-button>Annuler</button>
-    <button md-raised-button>Ajouter</button>
+    <button md-raised-button (click)="showResult()">Ajouter</button>
   </md-card-actions>
   </md-card-content>
 
@@ -96,6 +96,8 @@
   </md-card-header>
   <md-card-content class="card-content">
     <p>Result:</p>
+    <p>type: {{result.type}}</p>
+    <p>coordinates: {{result.coordinates}}</p>
   </md-card-content>
 
 </md-card>

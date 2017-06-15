@@ -1,4 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import MapService from '../../services/map.service';
+
 @Component({
   selector: 'app-contact-faune-formulaire',
   templateUrl: './contact-faune-formulaire.component.html',
@@ -11,6 +13,7 @@ export class ContactFauneFormulaireComponent implements OnInit {
     {value: 'francais', viewValue: 'Francais'},
     {value: 'latin', viewValue: 'Latin'}
   ];
+  public result;
   selectedTaxonomique: string;
   taxonomiques = [
     {value: 'Mammifières', viewValue: 'Mammifières'},
@@ -26,9 +29,19 @@ export class ContactFauneFormulaireComponent implements OnInit {
     {value: 'Amphibiens', viewValue: 'Amphibiens'},
     {value: 'Poissions', viewValue: 'Poissions'}
   ]
-  constructor() { }
+  constructor(private mapService: MapService) {
+    this.result = {
+      type : '',
+      coordinates: []
+    }
+   }
 
   ngOnInit() {
   }
-
+  showResult() {
+    let result;
+    result = this.mapService.marker.toGeoJSON();
+    this.result.type = result.geometry.type;
+    this.result.coordinates = result.geometry.coordinates;
+  }
 }

@@ -34,10 +34,8 @@ export default class MapService {
   initialize() {
         const map = L.map('map', {
             zoomControl: false,
-            center: L.latLng(40.731253, -73.996139),
-            zoom: 12,
-            minZoom: 4,
-            maxZoom: 19,
+            // center: L.latLng(40.731253, -73.996139),
+            zoom: 11,
             layers: [this.baseMaps.OpenStreetMap]
         });
 
