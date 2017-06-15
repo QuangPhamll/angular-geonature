@@ -9,7 +9,6 @@ import {Map} from 'leaflet';
   selector: 'app-carte',
   templateUrl: './carte.component.html',
   styleUrls: ['./carte.component.css'],
-  providers: [MapService, GeocodingService]
 })
 export class CarteComponent implements OnInit {
 
@@ -34,7 +33,6 @@ export class CarteComponent implements OnInit {
         if (!this.address) { return; }
 
         this.mapService.search(this.address);
-
         // this.geocoder.geocode(this.address)
         // .subscribe(location => {
         //     this.map.fitBounds(location.viewBounds, {});
