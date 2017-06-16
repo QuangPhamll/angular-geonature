@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import MapService from '../../services/map.service';
+import { MapService } from '../../services/map.service';
 import {Http} from '@angular/http';
 
 @Component({
@@ -10,7 +10,7 @@ import {Http} from '@angular/http';
 
 export class ContactFauneFormulaireComponent implements OnInit {
   selectedLangue: string;
-  private httpDone = false;
+  public httpDone;
   langues = [
     {value: 'francais', viewValue: 'Francais'},
     {value: 'latin', viewValue: 'Latin'}
@@ -37,6 +37,8 @@ export class ContactFauneFormulaireComponent implements OnInit {
       type : '',
       coordinates: []
     }
+    this.httpDone = false;
+    this.gpsData = {};
    }
 
   ngOnInit() {

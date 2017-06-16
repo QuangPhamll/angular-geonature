@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import MapService from '../services/map.service';
+import { MapService } from '../services/map.service';
 import {GeocodingService} from '../services/geocoding.service';
 
 import {Map} from 'leaflet';
@@ -13,8 +13,8 @@ import {Map} from 'leaflet';
 export class CarteComponent implements OnInit {
 
     address: string;
-    private map: Map;
-  constructor(private geocoder: GeocodingService, private mapService: MapService) {
+    public map: Map;
+  constructor(public geocoder: GeocodingService, public mapService: MapService) {
         this.address = '';
         this.mapService.editing = false;
         this.mapService.removing = false;

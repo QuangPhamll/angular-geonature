@@ -3,7 +3,7 @@ import {Http} from '@angular/http';
 import {GeocodingService} from './geocoding.service';
 import { Map, GeoJSON } from 'leaflet';
 @Injectable()
-export default class MapService {
+export class MapService {
   public map: Map;
   public baseMaps: any;
   private currentLayer: GeoJSON;

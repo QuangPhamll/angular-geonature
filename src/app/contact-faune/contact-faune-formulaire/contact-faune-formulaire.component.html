@@ -27,7 +27,7 @@
 
   <md-card-content class="card-content">
 <br>
-      <md-select placeholder="Langue:" [(ngModel)]="selectedValue" name="lange">
+      <md-select placeholder="Langue:"  name="lange">
         <md-option *ngFor="let langue of langues" [value]="langue.value">
           {{langue.viewValue}}
         </md-option>
@@ -45,7 +45,7 @@
     <md-checkbox>Facultatif</md-checkbox>
 <br>
 <br>
-    <md-select placeholder="Taxon:" [(ngModel)]="selectedTaxon" name="tax">
+    <md-select placeholder="Taxon:" name="tax">
       <md-option *ngFor="let taxon of taxons" [value]="taxon.value">
         {{taxon.viewValue}}
       </md-option>

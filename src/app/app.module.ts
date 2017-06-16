@@ -21,7 +21,7 @@ import { CarteComponent } from './carte/carte.component';
 import { ContactFauneFormulaireComponent } from './contact-faune/contact-faune-formulaire/contact-faune-formulaire.component';
 
 // Service
-import MapService from './services/map.service';
+import { MapService } from './services/map.service';
 import {GeocodingService} from './services/geocoding.service';
 
 @NgModule({
