@@ -10,6 +10,7 @@ export class MapService {
   public editing: boolean;
   public removing: boolean;
   public marker: any;
+  public isMarker: boolean;
 
   constructor(private http: Http, private geocoder: GeocodingService) {
         this.baseMaps = {
@@ -29,6 +30,7 @@ export class MapService {
 
         this.editing = false;
         this.removing = false;
+        this.isMarker = false;
   }
 
   initialize() {
@@ -66,10 +68,11 @@ export class MapService {
                   })
                   .addTo(this.map)
                   .openPopup();
-
+                  this.isMarker = true;
                   this.marker.on('click', (event: MouseEvent) => {
                       if (this.removing) {
-                          this.map.removeLayer(this.marker);
+                            this.map.removeLayer(this.marker);
+                            this.isMarker = false;
                       }
                   });
 
