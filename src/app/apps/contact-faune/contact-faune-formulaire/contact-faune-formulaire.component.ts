@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import { MapService } from '../../services/map.service';
+import { MapService } from '../../../services/map.service';
 import {Http} from '@angular/http';
 import {MdDialog} from '@angular/material';
 @Component({
@@ -11,7 +11,7 @@ import {MdDialog} from '@angular/material';
 export class ContactFauneFormulaireComponent implements OnInit {
   selectedLangue: string;
   public httpDone;
-  private dataFalse: boolean;
+  public dataFalse: boolean;
   langues = [
     {value: 'francais', viewValue: 'Francais'},
     {value: 'latin', viewValue: 'Latin'}
@@ -52,6 +52,7 @@ export class ContactFauneFormulaireComponent implements OnInit {
         let result;
         result = this.mapService.marker.toGeoJSON();
         this.result.type = result.geometry.type;
+        console.log(result);
         this.result.coordinates = result.geometry.coordinates;
         // tslint:disable-next-line:max-line-length
         this.http.get('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + encodeURIComponent(this.result.coordinates[1]) + '&lon=' + encodeURIComponent(this.result.coordinates[0]) + '&zoom=18&addressdetails=1)')
@@ -65,5 +66,15 @@ export class ContactFauneFormulaireComponent implements OnInit {
       this.dataFalse = true;
     }
 
+  }
+// not now will be added in service later
+  getAL(lat, lon) {
+        this.http.get('https://wxs.ign.fr/45su53c7syvo2m9bjchbz7j5/alti/rest/elevation.json?lon=' + lon + '&lat=' + lat + '&indent=true')
+        .map(r => r.json())
+        .subscribe(res => {
+          this.gpsData = res.elevations[2];
+          this.httpDone = true;
+          console.log(this.gpsData);
+      });
   }
 }

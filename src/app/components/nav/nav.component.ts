@@ -25,6 +25,6 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.geonature_image = require ('./../../images/geonature_image2.png') as string;
+      this.geonature_image = require ('./../../../images/geonature_image3.png') as string;
   }
 }

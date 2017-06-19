@@ -13,12 +13,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Angular created component
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { ContactFauneComponent } from './contact-faune/contact-faune.component';
-import { ContactFloreComponent } from './contact-flore/contact-flore.component';
-import { AccueilComponent } from './accueil/accueil.component';
-import { CarteComponent } from './carte/carte.component';
-import { ContactFauneFormulaireComponent } from './contact-faune/contact-faune-formulaire/contact-faune-formulaire.component';
+import { NavComponent } from './components/nav/nav.component';
+import { ContactFauneComponent } from './apps/contact-faune/contact-faune.component';
+import { ContactFloreComponent } from './apps/contact-flore/contact-flore.component';
+import { AccueilComponent } from './apps/accueil/accueil.component';
+import { CarteComponent } from './components/carte/carte.component';
+import { ContactFauneFormulaireComponent } from './apps/contact-faune/contact-faune-formulaire/contact-faune-formulaire.component';
 
 // Service
 import { MapService } from './services/map.service';

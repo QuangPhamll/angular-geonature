@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ContactFauneComponent } from './contact-faune/contact-faune.component';
-import { ContactFloreComponent } from './contact-flore/contact-flore.component';
-import { AccueilComponent } from './accueil/accueil.component';
+import { ContactFauneComponent } from './apps/contact-faune/contact-faune.component';
+import { ContactFloreComponent } from './apps/contact-flore/contact-flore.component';
+import { AccueilComponent } from './apps/accueil/accueil.component';
 
 
 const appRoutes: Routes = [

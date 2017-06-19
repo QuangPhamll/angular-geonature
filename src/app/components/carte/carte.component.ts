@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { MapService } from '../services/map.service';
-import {GeocodingService} from '../services/geocoding.service';
+import { MapService } from '../../services/map.service';
+import {GeocodingService} from '../../services/geocoding.service';
 
 import {Map} from 'leaflet';
 
