@@ -6,11 +6,11 @@ import {GeocodingService} from '../../services/geocoding.service';
 import {Map} from 'leaflet';
 
 @Component({
-  selector: 'app-carte',
-  templateUrl: './carte.component.html',
-  styleUrls: ['./carte.component.css'],
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.css'],
 })
-export class CarteComponent implements OnInit {
+export class MapComponent implements OnInit {
 
     address: string;
     public map: Map;

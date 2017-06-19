@@ -17,7 +17,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ContactFauneComponent } from './apps/contact-faune/contact-faune.component';
 import { ContactFloreComponent } from './apps/contact-flore/contact-flore.component';
 import { AccueilComponent } from './apps/accueil/accueil.component';
-import { CarteComponent } from './components/carte/carte.component';
+import { MapComponent } from './components/map/map.component';
 import { ContactFauneFormulaireComponent } from './apps/contact-faune/contact-faune-formulaire/contact-faune-formulaire.component';
 
 // Service
@@ -31,7 +31,7 @@ import {GeocodingService} from './services/geocoding.service';
     ContactFauneComponent,
     ContactFloreComponent,
     AccueilComponent,
-    CarteComponent,
+    MapComponent,
     ContactFauneFormulaireComponent,
   ],
   imports: [
