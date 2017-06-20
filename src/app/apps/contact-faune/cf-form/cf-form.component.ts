@@ -3,12 +3,12 @@ import { MapService } from '../../../services/map.service';
 import {Http} from '@angular/http';
 import {MdDialog} from '@angular/material';
 @Component({
-  selector: 'app-contact-faune-formulaire',
-  templateUrl: './contact-faune-formulaire.component.html',
-  styleUrls: ['./contact-faune-formulaire.component.css'],
+  selector: 'app-cf-form',
+  templateUrl: './cf-form.component.html',
+  styleUrls: ['./cf-form.component.css'],
 })
 
-export class ContactFauneFormulaireComponent implements OnInit {
+export class CfFormComponent implements OnInit {
   selectedLangue: string;
   public httpDone;
   public dataFalse: boolean;
