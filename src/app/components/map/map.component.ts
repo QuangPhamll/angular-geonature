@@ -23,6 +23,8 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.mapService.disableMouseEvent('add-marker');
     this.mapService.disableMouseEvent('remove-marker');
+    this.mapService.disableMouseEvent('goto');
+    this.mapService.disableMouseEvent('place-input');
     this.mapService.initialize();
     this.mapService.onMapClick();
     this.map = this.mapService.map;
