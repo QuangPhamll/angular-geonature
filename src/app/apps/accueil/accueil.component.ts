@@ -11,7 +11,7 @@ export class AccueilComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.geonature_image = require <any> ('./../../../images/geonature_image1.png');
+   this.geonature_image = require <any> ('./../../../images/geonature_image3.png');
   }
 
 }

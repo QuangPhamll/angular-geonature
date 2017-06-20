@@ -1,5 +1,7 @@
 <div fxLayout="column">
-  <img [src]="geonature_image" class="img-responsive" alt="Responsive image">
+  <a routerLink="/accueil" routerLinkActive="active">
+    <img [src]="geonature_image" class="img-responsive" alt="Geonature Image">
+  </a>
   <md-nav-list class="appnav">
     <md-list-item *ngFor="let app of nav" routerLink={{app.route}} routerLinkActive="active">
       <md-icon md-list-icon>{{app.icon}}</md-icon>
