@@ -58,8 +58,8 @@ export class MapService {
                   if ( this.marker != null ) { this.marker.remove()};
                   this.marker = L.marker(e.latlng, {
                     icon: L.icon({
-                        iconUrl: require('../../images/marker-icon.png') as string,
-                        shadowUrl: require('../../images/marker-shadow.png') as string,
+                        iconUrl: require <any>('../../images/marker-icon.png'),
+                        shadowUrl: require <any>('../../images/marker-shadow.png'),
                     }),
                     draggable: true,
                   })
